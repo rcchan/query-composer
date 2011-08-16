@@ -13,7 +13,7 @@
     <% end %>
     <% @queries.each do |query| %>
     <tr>
-      <td><%= link_to query.title, query_path(query.id) %></td>
+      <td><%= link_to !query.title.empty? ? query.title : "[Untitled]", query_path(query.id) %></td>
       <td><%= query.description %></td>
       <td>
         <% if (not query.last_execution) %>
